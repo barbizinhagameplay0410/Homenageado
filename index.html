@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="3° ano de Info" content="3° ano de Info">
+  <title>Homenageado</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h3>Recadinho do 3° Info</h3>
+<div class="envlope-wrapper">
+
+    <div id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter">
+            <div class="words line1"></div>
+            <div class="words line2"></div>
+            <div class="words line3"></div>
+            <div class="words line4"></div>
+        </div>
+        <div class="hearts">
+            <div class="heart a1"></div>
+            <div class="heart a2"></div>
+            <div class="heart a3"></div>
+        </div>
+    </div>
+</div>
+<div class="reset">
+    <button id="open">Open</button>
+    <button id="reset">Reset</button>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <div id="conteudo">
+            <h2>Aceita ser nosso homenageado?</h2>
+            <div style="margin: auto;width: 170px;">
+                <button style="position: fixed;display: block;" class="btn" onclick="sim()">SIM</button>
+                <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)" style="position: absolute;">NÃO</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+    
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script  src="index.js"></script>
+
+</body>
+<script>
+    function sim() {
+        alert("Você fez a escolha certa meu parceiro! :)");
+       
+    }
+
+    function desvia(btn) {
+        // btn declarado na função
+        btn.style.position = 'absolute';
+        btn.style.bottom = geraPosicao(10, 90);
+        btn.style.left = geraPosicao(10, 90);
+        console.log('opa, desviei...');
+    }
+
+    function geraPosicao(min, max) {
+        return (Math.random() * (max - min) + min) + "%";
+    }
+
+</script>
+
+</html>
